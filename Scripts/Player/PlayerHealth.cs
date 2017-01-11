@@ -16,14 +16,14 @@ public class PlayerHealth : MonoBehaviour
 
 	public Color m_FullHealthColor = Color.green;  
 	public Color m_ZeroHealthColor = Color.red; 
-	public int scoreValue = 0; // The amount added to the player's score when the enemy dies.
+	//public int scoreValue = 0; // The amount added to the player's score when the enemy dies.
 
 	//public Texture2D blood_heart;
 
 	//public Camera camera;
 
 	EnemyHealth Enemyhealth;
-	private string name = "Score: ";
+	//private string name = "Score: ";
 	GameObject Ninja;
 	float NinjaHeight;
 
