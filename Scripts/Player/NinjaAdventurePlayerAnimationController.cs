@@ -23,7 +23,7 @@ namespace GVR.Samples.NinjaTraining {
 
     public Animator Animator;
     public bool InstantRotate;
-    public float RotateSpeed = 8.0f;
+    public float RotateSpeed = 5.0f;
 
 	Rigidbody NinjaRigidbody;
 

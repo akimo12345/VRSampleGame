@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerMutilAttack : MonoBehaviour {
 
 	public LayerMask m_EnemyMask;
-	public int damagePerSlice = 50;
+	public int damagePerSlice = 25;
 	public float timeBetweenAttacks = 0.5f;
 	public float m_SliceRidus = 0.5f;
 

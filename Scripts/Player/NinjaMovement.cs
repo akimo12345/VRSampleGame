@@ -28,7 +28,7 @@ namespace GVR.Samples.NinjaTraining{
 
 		[Header("Movement")]
 		[Tooltip("The max speed that the character will move.")]
-		public float MovementSpeed = 4.0f;
+		public float MovementSpeed = 5.0f;
 
 		[Tooltip("The input provider that will be polled for a direction vector each frame. " +
 			"This must implement IPlayerInputProvider.")]
