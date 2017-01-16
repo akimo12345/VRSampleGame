@@ -6,7 +6,7 @@ public class PlayerMutilAttack : MonoBehaviour {
 	public LayerMask m_EnemyMask;
 	public int damagePerSlice = 25;
 	public float timeBetweenAttacks = 0.5f;
-	public float m_SliceRidus = 0.5f;
+	public float m_SliceRidus = 0.0f;
 
 	private Rigidbody _body;
 
