@@ -1481,7 +1481,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1523,6 +1523,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1.5
   attackDamage: 25
+  Clips:
+  - {fileID: 8300000, guid: 078306b3071f06e4db2f8903a7f3f441, type: 3}
+  - {fileID: 8300000, guid: b47f813ff7a3065498f69f9bfdf51017, type: 3}
+  - {fileID: 8300000, guid: 071a7500dd6768b42860c353b04d5d8f, type: 3}
+  PreventRepeats: 1
 --- !u!114 &114000012664432024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1561,6 +1566,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0389f00975f27429a52dfc7e69927a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minRoarFrame: 150
+  maxRoarFrame: 600
+  Clips:
+  - {fileID: 8300000, guid: 2c45e285ef1c8544cac0024dffc0577a, type: 3}
+  - {fileID: 8300000, guid: 63c0d120984e2b540b93d9b390f62a3c, type: 3}
+  - {fileID: 8300000, guid: ec3a09ffb8f878d47b140ab2d8bcb62a, type: 3}
+  PreventRepeats: 1
 --- !u!114 &114000014194040698
 MonoBehaviour:
   m_ObjectHideFlags: 1
