@@ -11,24 +11,26 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
     public Image m_FillImage; 
     public AudioClip deathClip;
+	public AudioClip heartClip;
     public float flashSpeed = 2.5f;
     //public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 
 	public Color m_FullHealthColor = Color.green;  
 	public Color m_ZeroHealthColor = Color.red; 
-	public int scoreValue = 0; // The amount added to the player's score when the enemy dies.
+	//public int scoreValue = 0; // The amount added to the player's score when the enemy dies.
 
 	//public Texture2D blood_heart;
 
 	//public Camera camera;
 
 	EnemyHealth Enemyhealth;
-	private string name = "Score: ";
+	//private string name = "Score: ";
 	GameObject Ninja;
 	float NinjaHeight;
 
     Animator anim;
-    AudioSource playerAudio;
+    GvrAudioSource playerAudio;
+	GvrAudioSource heartAudio;
     //PlayerMovement playerMovement;
     //PlayerShooting playerShooting;
     bool isDead;
@@ -49,7 +51,9 @@ public class PlayerHealth : MonoBehaviour
 		*/
 		anim = GetComponentInChildren <Animator> ();
 
-        playerAudio = GetComponent <AudioSource> ();
+		playerAudio = GetComponent <GvrAudioSource> ();
+
+		heartAudio = GetComponent <GvrAudioSource> ();
 		
 		Enemyhealth = GetComponent <EnemyHealth> ();
 
@@ -99,7 +103,15 @@ public class PlayerHealth : MonoBehaviour
 
 		SetHealthUI ();
 
-        if(currentHealth <= 0 && !isDead)
+		if (currentHealth <= 30) 
+		{
+			heartAudio.clip = heartClip;
+			heartAudio.Play ();
+			heartAudio.loop = true;
+			heartAudio.volume = 0.8f; 
+		}
+        
+		if(currentHealth <= 0 && !isDead)
         {
             Death ();
         }

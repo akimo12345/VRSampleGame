@@ -20,7 +20,7 @@ public class NinjaRig_Health : MonoBehaviour {
 	{
 		currentState = anim.GetCurrentAnimatorStateInfo (0);
 
-		if (currentState.IsName ("Driect Blend Tree") || currentState.IsName ("Stunned")) 
+		if (currentState.IsName ("Driect Blend Tree") || currentState.IsName ("Stunned") || currentState.IsName("Walk Blend Tree")) 
 		{
 			Debug.Log ("NinjaDeath Anim");
 			anim.enabled = false;

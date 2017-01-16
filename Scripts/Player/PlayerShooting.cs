@@ -51,8 +51,7 @@ public class PlayerShooting : MonoBehaviour
 	{
 		timer += Time.deltaTime;
 	}
-
-
+		
 	public Vector3 Velocity {
 		get { return _body.velocity; }
 	}

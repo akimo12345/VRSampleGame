@@ -11,8 +11,8 @@ public class EnemyHealth : MonoBehaviour
 	public AudioClip hurtClip;
 
 	Animator anim; // Reference to the animator.
-	AudioSource enemyAudio; // Reference to the audio source.
-	AudioSource enemyAudio1; //Reference to audio source.
+	GvrAudioSource enemyAudio; // Reference to the audio source.
+	GvrAudioSource enemyAudio1; //Reference to audio source.
 	ParticleSystem BloodSplatter; // Reference to the particle system that plays when the enemy is damaged.
 	CapsuleCollider capsuleCollider; // Reference to the capsule collider.
 	PlayerHealth playerhealth;
@@ -24,8 +24,8 @@ public class EnemyHealth : MonoBehaviour
     {
 		//score = 0;
         anim = GetComponent <Animator> ();
-        enemyAudio = GetComponent <AudioSource> ();
-		enemyAudio1 = GetComponent <AudioSource> ();
+		enemyAudio = GetComponent <GvrAudioSource> ();
+		enemyAudio1 = GetComponent <GvrAudioSource> ();
 		BloodSplatter = GetComponentInChildren <ParticleSystem> ();
         capsuleCollider = GetComponent <CapsuleCollider> ();
 		playerhealth = GameObject.Find("Ninja").GetComponent<PlayerHealth> ();

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 using System.Collections;
 using GVR.Samples.NinjaTraining;
 
@@ -9,13 +8,11 @@ public class EnemyAttack : MonoBehaviour
     public int attackDamage = 25;
 
 	Animator anim; // Reference to the animator component.
-	GameObject player, attack; // Reference to the player GameObject.
+	GameObject player; // Reference to the player GameObject.
 	PlayerHealth playerHealth; // Reference to the player's health.
     EnemyHealth enemyHealth;
 
-    public UnityEvent OnAttack;
-
-    bool playerInRange; // Whether player is within the trigger collider and can be attacked.
+	bool playerInRange; // Whether player is within the trigger collider and can be attacked.
 	float timer; // Timer for counting up to the next attack.
 
     void Awake ()
@@ -44,6 +41,7 @@ public class EnemyAttack : MonoBehaviour
         {
             playerInRange = false;
         }
+		anim.SetBool("WalkerMove",true);
     }
 
 
@@ -65,7 +63,6 @@ public class EnemyAttack : MonoBehaviour
             anim.SetTrigger ("NinjaDead");
 			anim.SetBool("WalkerMove",false);
 			anim.SetBool("WalkerAttack",false);
-
         }
     }
 
@@ -77,8 +74,7 @@ public class EnemyAttack : MonoBehaviour
         if(playerHealth.currentHealth > 0)
         {	
 			anim.SetBool("WalkerAttack",true);
-            OnAttack.Invoke();
-            Animator charanim = GameObject.Find ("Ninja_Rig").GetComponent<Animator>();
+			Animator charanim = GameObject.Find ("Ninja_Rig").GetComponent<Animator>();
 			charanim.SetTrigger ("Knockdown");          
 			anim.SetBool("WalkerMove",true);
 			yield return new WaitForSeconds(0f);
