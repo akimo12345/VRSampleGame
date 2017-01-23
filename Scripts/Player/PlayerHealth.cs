@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip deathClip;
 	public AudioClip heartClip;
     public float flashSpeed = 2.5f;
+	public GameObject other; //walker
+	public GameObject other1; //walkerking
     //public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 
 	public Color m_FullHealthColor = Color.green;  
@@ -144,4 +146,11 @@ public class PlayerHealth : MonoBehaviour
     {
         SceneManager.LoadScene (0);
     }
+
+	public void SceneSwitch ()
+	{
+		//Destroy (other);
+		//Destroy (other1);
+		SceneManager.LoadScene (1);
+	}
 }

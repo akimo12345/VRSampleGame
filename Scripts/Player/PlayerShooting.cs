@@ -23,7 +23,7 @@ public class PlayerShooting : MonoBehaviour
 	void OnTriggerEnter (Collider other)
 	{
 		
-		if (other.transform.tag == "Walker" && timer >= timeBetweenAttacks && playerHealth.currentHealth > 0)  
+		if ((other.transform.tag == "Walker" || other.transform.tag == "WalkerKing") && timer >= timeBetweenAttacks && playerHealth.currentHealth > 0)  
 		{
 			timer = 0f;
 
