@@ -19,7 +19,7 @@ public class EnemyManagerScene1 : MonoBehaviour {
 
 	private float spawnIntervall = 3;
 
-	//Animator anim;
+	Animator anim;
 
 	//private GUIScript gui;
 
@@ -35,7 +35,7 @@ public class EnemyManagerScene1 : MonoBehaviour {
 		
 		enemies = new ArrayList();
 
-		//anim = GetComponent<Animator>();
+		anim = GetComponent<Animator>();
 		//gui = Camera.main.GetComponentInChildren<GUIScript>();
 	}
 
@@ -83,6 +83,14 @@ public class EnemyManagerScene1 : MonoBehaviour {
 
 		waveLevel++;
 
+		StageShow ();
+
+	}
+
+	void StageShow()
+	{
+		StageText.stage = waveLevel;
+		anim.SetTrigger ("StageShow");
 	}
 
 	IEnumerator InterMission(float seconds){
@@ -117,6 +125,17 @@ public class EnemyManagerScene1 : MonoBehaviour {
 	IEnumerator StartMission(float seconds){
 		yield return new WaitForSeconds(seconds);
 
+		if (waveLevel >= 5 && waveLevel <= 10) 
+		{
+			spawnIntervall = 2f;
+			enemyAmount = 20;
+		} 
+		else if (waveLevel >= 10) 
+		{
+			spawnIntervall = 1.5f;
+			enemyAmount = 30;
+		}
+			
 		allEnemiesSpawned = false;
 
 		StartCoroutine(EnemySpawnerRoutine(spawnIntervall,enemyAmount));

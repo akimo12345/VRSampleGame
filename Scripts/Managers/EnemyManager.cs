@@ -28,6 +28,12 @@ public class EnemyManager : MonoBehaviour
             return;
         }
 
+		if (StageText.stage >= 5) 
+		{
+			spawnTime = 10f;
+			maxEnemyCount = 10000;
+		}
+
 		if (enemyCount >= maxEnemyCount)
 			CancelInvoke ("Spawn");
 		else 
